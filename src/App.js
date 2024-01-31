@@ -7,8 +7,7 @@ import React, { useState } from 'react'
 import {
    BrowserRouter,
    Routes,
-   Route,
-   Link
+   Route
  } from 'react-router-dom';
 function App() {
    const [mode,setMode]=useState('light')
@@ -46,18 +45,18 @@ function App() {
         <Alert alert={alert} />
         <div className="container my-4" mode={mode}>
           <Routes>
-            <Route exact path="/about" element={<About />}></Route>
+            <Route exact path="/about" element={<About mode={mode}/>}></Route>
             <Route
-              exact path="/"
-              element={
+              exact path="/" 
+               element={ 
                 <TextForm
                   showAlert={showAlert}
                   heading="Enter Text to analyze "
                   mode={mode}
                 />
-              }
-            ></Route>
-          </Routes>
+               } 
+             ></Route>
+           </Routes> 
         </div>
       </BrowserRouter>
   </>
